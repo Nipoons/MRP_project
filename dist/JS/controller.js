@@ -99,8 +99,8 @@ createViewer = function() {
     var viewer = new MJPEGCANVAS.Viewer({
         divID: 'mjpeg',
         host: 'localhost',
-        width: 318,
-        height: 318,
+        width: 414,
+        height: 425,
         topic: 'image_topic'
     });
 }
@@ -108,8 +108,8 @@ createViewer2 = function() {
     var viewer = new MJPEGCANVAS.Viewer({
         divID: 'mjpeg2',
         host: 'localhost',
-        width: 238,
-        height: 142,
+        width: 398,
+        height: 210,
         topic: 'image_topic'
     });
 }
@@ -117,8 +117,8 @@ createViewer3 = function() {
     var viewer = new MJPEGCANVAS.Viewer({
         divID: 'mjpeg3',
         host: 'localhost',
-        width: 238,
-        height: 142,
+        width: 398,
+        height: 210,
         topic: 'image_topic'
     });
 }
@@ -240,4 +240,21 @@ function about() {
 
 function logout() {
     window.location = "http://127.0.0.1:5500/dist/index.html";
+}
+
+
+var cmd_vel_listener3 = new ROSLIB.Topic({
+    ros: ros,
+    name: "/cmd_vel3",
+    messageType: 'std_msgs/Int16'
+});
+var twist3 = new ROSLIB.Message({ data: 1 });
+
+
+function s() {
+
+    cmd_vel_listener3.publish(twist3);
+
+
+    console.log("success")
 }

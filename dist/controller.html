@@ -26,16 +26,34 @@
 <body style="background-color: rgba(0,0,0,0.7); ">
 
 
-    <div style="position:absolute; background-color: rgb(255,123,00); margin: 0 0 0 12rem; width: 56rem;">
+    <div style="position:absolute; background-color: rgb(255,123,00); margin: 0 0 0 14rem; width: 67.5rem;">
         <h3 style="padding-left: 15px; color: #fff; border-bottom: 1px solid #333; border-top: 1px solid #333;">Monitor</h3>
     </div>
     <section id="monitor">
-        <div id="mjpeg" style="position: absolute; background-color: #fff;height: 20rem; width:20rem;  margin: 5rem  0 0 15rem; border:1px solid #333">
-        </div>
-        <div id="mjpeg2" style="position: absolute; background-color: #fff;height: 9rem;  width: 15rem; margin: 5rem  0 0 40rem; border:1px solid #333">
-        </div>
-        <div id="mjpeg3" style="position: absolute; background-color: #fff;height: 9rem;  width: 15rem; margin: 16rem 0 0 40rem; border:1px solid #333">
-        </div>
+        <div id="mjpeg" style="
+        position: absolute;
+        background-color: #fff;
+        height: 26rem;
+        width: 25rem;
+        margin: 5rem 0 0 20rem;
+        border: 1px solid #333;
+      "></div>
+        <div id="mjpeg2" style="
+        position: absolute;
+        background-color: #fff;
+        height: 12.5rem;
+        width: 25rem;
+        margin: 5rem 0 0 50rem;
+        border: 1px solid #333;
+      "></div>
+        <div id="mjpeg3" style="
+        position: absolute;
+        background-color: #fff;
+        height: 12.5rem;
+        width: 25rem;
+        margin: 18.5rem 0 0 50rem;
+        border: 1px solid #333;
+      "></div>
 
 
     </section>
@@ -54,16 +72,49 @@
         <h4 style="background: white;">Color</h4>
         <h4 style="color: #fff;">Shape</h4>
         <h4 style="background: white;">Position</h4>
+        <h4 style=" margin-top: 2rem; padding-left: 3px; border-top: 1px solid #333;border-bottom: 1px solid #333;color: #fff;"> Test</h4>
+        <h4 class="boxbutton" type=" button " onclick="s()" style="padding-left: 3px; cursor: pointer">Activate</h4>
+        <h4 class="boxbutton-red" type="button" onclick="s()" style="padding-left: 3px; cursor: pointer">Emergency </h4>
 
     </section>
 
-    <div style="position:absolute; background-color: rgb(255,123,00); margin: 27rem 0 0 12rem; width: 56rem;">
+    <div style="position:absolute; background-color: rgb(255,123,00); margin: 33rem 0 0 14rem; width: 67.5rem;">
         <h3 style="padding-left: 15px; color: #fff; border-bottom: 1px solid #333; border-top: 1px solid #333;">Controller
+            <i class="fa fa-circle" onclick="swap()" onmouseover="style.color='green'" onmouseout="style.color='#fff'"></i>
         </h3>
     </div>
+    <div id="joycon" style="display: initial;">
+        <div id="zone_joystick" style="position: absolute;margin-left: 40rem; margin-top:43rem;"></div>
+        <div id="zone_joystick2" style="position: absolute; margin-left: 60rem; margin-top:43rem;"></div>
 
-    <div id="zone_joystick" style="position: absolute;margin-left: 30rem; margin-top:37rem;"></div>
-    <div id="zone_joystick2" style="position: absolute; margin-left: 50rem; margin-top:37rem;"></div>
+    </div>
+
+    <div id="slidecon" style="display: none;">
+        <h3 style="position: absolute;margin-left: 40rem; margin-top:43rem;">test swap</h3>
+
+    </div>
+    <script>
+        let click = false;
+
+        function swap() {
+            if (click) {
+                document.getElementById("joycon").style.display = 'none';
+                document.getElementById("slidecon").style.display = 'Initial';
+
+                click = false;
+
+            } else {
+                document.getElementById("joycon").style.display = 'Initial';
+                document.getElementById("slidecon").style.display = 'none';
+
+                click = true;
+
+
+            }
+
+
+        }
+    </script>
 
 
 </body>
